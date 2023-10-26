@@ -5,6 +5,6 @@
 int main()
 {
     std::cout << "Starting app" << std::endl;
-    GVector vec;
+    GVector vec(5);
     return 0;
 }

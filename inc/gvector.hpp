@@ -12,6 +12,7 @@ public:
 
 private:
     int* _val;
+    std::size_t _size;
 
 };
 

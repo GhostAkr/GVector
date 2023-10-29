@@ -31,3 +31,30 @@ int& GVector::operator[](size_t ix)
 
     return this->_val[ix];
 }
+
+void GVector::print()
+{
+    if (this->_val == nullptr || this->_size <= 0)
+    {
+        std::string errorMsg = std::string("Trying to print uninitialized GVector");
+        
+        throw std::runtime_error(errorMsg);
+    }
+
+    int maxNumsInRow = 10;
+    int numsInRow = 0;
+    for (size_t ix = 0; ix < this->_size; ++ix)
+    {
+        std::cout << this->_val[ix];
+        numsInRow++;
+
+        if (ix != this->_size - 1)
+            std::cout << " ";
+
+        if (numsInRow == maxNumsInRow || ix == this->_size - 1)
+        {
+            std::cout << std::endl;
+            numsInRow = 0;
+        }
+    }
+}

@@ -11,6 +11,9 @@ public:
     ~GVector();
 
     int& operator[](size_t ix);
+
+    void print();
+
 private:
     int* _val;
     std::size_t _size;

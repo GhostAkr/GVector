@@ -20,6 +20,14 @@ GVector::GVector(const GVector& other)
     std::memcpy(this->_val, other._val, other._size * sizeof(int));
 }
 
+GVector::GVector(GVector&& other)
+    : _val(other._val)
+    , _size(other._size)
+{
+    other._val = nullptr;
+    other._size = 0;
+}
+
 GVector::~GVector()
 {
     delete[] _val;

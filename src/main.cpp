@@ -18,5 +18,10 @@ int main()
     std::cout << "Copied GVector" << std::endl;
     vecCopy.print();
 
+    GVector vecMove(std::move(vecCopy));
+
+    std::cout << "Moved GVector" << std::endl;
+    vecMove.print();
+
     return 0;
 }

@@ -8,6 +8,7 @@ class GVector
 public:
     GVector();
     GVector(std::size_t size);
+    GVector(const GVector& other);
     ~GVector();
 
     int& operator[](size_t ix);

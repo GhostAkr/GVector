@@ -14,6 +14,12 @@ GVector::GVector(std::size_t size)
     , _size(size)
 {}
 
+GVector::GVector(const GVector& other)
+    : GVector(other._size)
+{
+    std::memcpy(this->_val, other._val, other._size * sizeof(int));
+}
+
 GVector::~GVector()
 {
     delete[] _val;

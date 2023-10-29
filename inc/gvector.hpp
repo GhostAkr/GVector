@@ -10,6 +10,7 @@ public:
     GVector(std::size_t size);
     ~GVector();
 
+    int& operator[](size_t ix);
 private:
     int* _val;
     std::size_t _size;

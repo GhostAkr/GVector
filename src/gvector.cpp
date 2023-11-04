@@ -35,6 +35,12 @@ namespace GAlg
         delete[] _val;
     }
 
+    GVector& GVector::operator=(GVector other)
+    {
+        GAlg::swap(*this, other);
+        return *this;
+    }
+
     int& GVector::operator[](size_t ix)
     {
         if (ix + 1 > this->_size)

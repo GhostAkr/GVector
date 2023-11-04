@@ -13,22 +13,16 @@ int main()
     std::cout << "Initial GVector" << std::endl;
     vec.print();
 
-    GAlg::GVector vecCopy(vec);
+    GAlg::GVector vecCopy;
+    vecCopy = vec;
     
     std::cout << "Copied GVector" << std::endl;
     vecCopy.print();
 
-    GAlg::GVector vecMove(std::move(vecCopy));
+    GAlg::GVector vecMove;
+    vecMove = std::move(vecCopy);
 
     std::cout << "Moved GVector" << std::endl;
-    vecMove.print();
-
-    vecMove[0] = 55;
-    GAlg::swap(vecMove, vec);
-    std::cout << "Vectors after swap:" << std::endl;
-    std::cout << "Initial:" << std::endl;
-    vec.print();
-    std::cout << "Moved:" << std::endl;
     vecMove.print();
 
     return 0;

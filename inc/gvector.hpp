@@ -14,6 +14,7 @@ namespace GAlg
         GVector(GVector&& other);
         ~GVector();
 
+        GVector& operator=(GVector other);
         int& operator[](size_t ix);
 
         friend void swap(GVector& firstm, GVector& second);

@@ -3,23 +3,32 @@
 
 #include <cstddef>
 
-class GVector
+namespace GAlg
 {
-public:
-    GVector();
-    GVector(std::size_t size);
-    GVector(const GVector& other);
-    GVector(GVector&& other);
-    ~GVector();
+    class GVector
+    {
+    public:
+        GVector();
+        GVector(std::size_t size);
+        GVector(const GVector& other);
+        GVector(GVector&& other);
+        ~GVector();
 
-    int& operator[](size_t ix);
+        int& operator[](size_t ix);
 
-    void print();
+        friend void swap(GVector& firstm, GVector& second);
 
-private:
-    int* _val;
-    std::size_t _size;
+        void print();
 
-};
+    private:
+        int* _val;
+        std::size_t _size;
+
+        void swap(GVector& other);
+
+    };
+
+    void swap(GVector& first, GVector& second);
+}
 
 #endif  // GVECTOR_HPP

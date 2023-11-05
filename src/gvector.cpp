@@ -6,7 +6,7 @@
 
 namespace GAlg
 {
-    GVector::GVector()
+    GVector::GVector() noexcept
         : _val(nullptr)
         , _size(0)
     {}
@@ -22,7 +22,7 @@ namespace GAlg
         std::memcpy(this->_val, other._val, other._size * sizeof(int));
     }
 
-    GVector::GVector(GVector&& other)
+    GVector::GVector(GVector&& other) noexcept
         : _val(other._val)
         , _size(other._size)
     {

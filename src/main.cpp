@@ -20,7 +20,7 @@ int main()
     vecCopy.print();
 
     GAlg::GVector vecMove;
-    vecMove = std::move(vecCopy);
+    vecMove = std::move_if_noexcept(vecCopy);
 
     std::cout << "Moved GVector" << std::endl;
     vecMove.print();

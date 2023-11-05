@@ -8,10 +8,10 @@ namespace GAlg
     class GVector
     {
     public:
-        GVector();
+        GVector() noexcept;
         GVector(std::size_t size);
         GVector(const GVector& other);
-        GVector(GVector&& other);
+        GVector(GVector&& other) noexcept;
         ~GVector();
 
         GVector& operator=(GVector other);

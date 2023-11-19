@@ -144,6 +144,12 @@ namespace GAlg
     extern template class GVector<int>;
     extern template class GVector<float>;
     extern template class GVector<double>;
+
+    // Aliases
+
+    using GVectorI = GVector<int>;
+    using GVectorF = GVector<float>;
+    using GVectorD = GVector<double>;
 }
 
 #endif  // GVECTOR_HPP

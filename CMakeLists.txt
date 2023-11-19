@@ -8,6 +8,7 @@ set(HEADERS
     ${INC_DIR}/gvector.h)
 
 set(SOURCES
-    ${SRC_DIR}/main.cpp)
+    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/gvector.cpp)
 
 add_executable(GVector ${HEADERS} ${SOURCES})

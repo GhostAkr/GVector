@@ -32,7 +32,7 @@ namespace GAlg
         {}
 
         GVector(std::size_t size)
-            : _val(new int[size])
+            : _val(new T[size])
             , _size(size)
         {}
 
@@ -116,7 +116,7 @@ namespace GAlg
 
         // Fields
 
-        int* _val;
+        T* _val;
         std::size_t _size;
 
         // Methods
@@ -138,6 +138,12 @@ namespace GAlg
     {
         first.swap(second);
     }
+
+    // Extern instantiations
+
+    extern template class GVector<int>;
+    extern template class GVector<float>;
+    extern template class GVector<double>;
 }
 
 #endif  // GVECTOR_HPP

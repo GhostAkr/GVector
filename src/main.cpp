@@ -5,23 +5,26 @@
 int main()
 {
     std::cout << "Starting app" << std::endl;
-    GAlg::GVectorI vec(12);
+    GAlg::GVectorI vec(5);
 
-    vec[0] = 4; vec[1] = 3; vec[2] = 14; vec[3] = 3; vec[4] = 312; vec[5] = 21;
-    vec[6] = 3; vec[7] = 56; vec[8] = 34; vec[9] = 67; vec[10] = 22; vec[11] = 44;
+    vec[0] = 1; vec[1] = 2; vec[2] = 3; vec[3] = 4; vec[4] = 5;
 
-    std::cout << "Initial GVector" << std::endl;
+    int mult = 3;
+    int res = 1;
+    auto foo = [=, &res](int& val) -> void {
+        val *= mult;
+        res = 0;
+    };
+
+    std::cout << "res before: " << res << std::endl;
+    std::cout << "Vector before" << std::endl;
     vec.print();
+    
+    vec.apply(foo);
 
-    GAlg::GVector vecCopy = vec;
-
-    std::cout << "Copied GVector" << std::endl;
-    vecCopy.print();
-
-    GAlg::GVector vecMove = std::move_if_noexcept(vecCopy);
-
-    std::cout << "Moved GVector" << std::endl;
-    vecMove.print();
+    std::cout << "res after: " << res << std::endl;
+    std::cout << "Vector after" << std::endl;
+    vec.print();
 
     return 0;
 }

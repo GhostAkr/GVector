@@ -6,6 +6,7 @@
 #include <string>
 #include <cstring>
 #include <stdexcept>
+#include <functional>
 
 namespace GAlg
 {
@@ -76,6 +77,14 @@ namespace GAlg
             }
 
             return this->_val[ix];
+        }
+
+        void apply(std::function<void(T&)> foo)
+        {
+            for (auto ix = 0; ix < _size; ++ix)
+            {
+                foo(_val[ix]);
+            }
         }
 
         // Friends

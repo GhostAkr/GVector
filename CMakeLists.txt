@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.27.0)
 project(GVector VERSION 0.1.0 LANGUAGES C CXX)
-######
+########
 
 set(INC_DIR inc)
 set(SRC_DIR src)
